@@ -2,9 +2,9 @@
 # METHOD 1
 
 def find_anagrams(*args):
-    stripd_string=word.strip()
+    stripd_string=word.replace(' ','')
     sorted_word=sorted(stripd_string)
-    stripd_test_string=test_word.strip()
+    stripd_test_string=test_word.replace(' ','')
     sorted_test_word=sorted(stripd_test_string)
     if sorted_word==sorted_test_word:
         return True
@@ -26,12 +26,14 @@ print()
 # METHOD 2
 
 def find_anagrams(word):
-    sorted_word=sorted(word)
+    stripd_word=word.replace(' ','')
+    sorted_word=sorted(stripd_word)
     return sorted_word
 
 word=input('Enter a word:')
 test_word=input('Check if this is an anagram:')
-sorted_test_word=sorted(test_word)
+stripd_test_word=test_word.replace(' ','')
+sorted_test_word=sorted(stripd_test_word)
 
 if find_anagrams(word)==sorted_test_word:
     print('The words are anagrams')
